@@ -1,15 +1,50 @@
 package io.github.s4gh.navigator;
 
 import com.sun.source.util.Trees;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+
 import java.util.stream.Collectors;
-import javax.lang.model.element.*;
+import javax.lang.model.element.Element;
+import javax.lang.model.element.ElementKind;
+import javax.lang.model.element.ExecutableElement;
+import javax.lang.model.element.Modifier;
+import javax.lang.model.element.Name;
+import javax.lang.model.element.TypeElement;
+import javax.lang.model.element.VariableElement;
+import javax.lang.model.type.ArrayType;
+import javax.lang.model.type.DeclaredType;
+import static javax.lang.model.type.TypeKind.ARRAY;
+import static javax.lang.model.type.TypeKind.BOOLEAN;
+import static javax.lang.model.type.TypeKind.BYTE;
+import static javax.lang.model.type.TypeKind.CHAR;
+import static javax.lang.model.type.TypeKind.DECLARED;
+import static javax.lang.model.type.TypeKind.DOUBLE;
+import static javax.lang.model.type.TypeKind.ERROR;
+import static javax.lang.model.type.TypeKind.FLOAT;
+import static javax.lang.model.type.TypeKind.INT;
+import static javax.lang.model.type.TypeKind.INTERSECTION;
+import static javax.lang.model.type.TypeKind.LONG;
+import static javax.lang.model.type.TypeKind.SHORT;
+import static javax.lang.model.type.TypeKind.TYPEVAR;
+import static javax.lang.model.type.TypeKind.UNION;
+import static javax.lang.model.type.TypeKind.VOID;
+import static javax.lang.model.type.TypeKind.WILDCARD;
+import javax.lang.model.type.TypeMirror;
+import javax.lang.model.type.WildcardType;
 import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 
-import javax.lang.model.type.*;
+import org.netbeans.api.java.source.CompilationController;
+import org.netbeans.api.java.source.CompilationInfo;
+import org.netbeans.api.java.source.ElementHandle;
+import org.netbeans.api.java.source.JavaSource;
 
-import org.netbeans.api.java.source.*;
 import org.openide.filesystems.FileObject;
 
 final class JavaTreeBuilder {

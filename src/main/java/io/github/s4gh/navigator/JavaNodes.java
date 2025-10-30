@@ -5,21 +5,24 @@ import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
-
 import java.io.IOException;
 import java.util.Set;
 import javax.lang.model.element.Element;
-
-import org.netbeans.api.java.source.ui.ElementOpen;
-import org.netbeans.api.java.source.ElementHandle;
 import javax.lang.model.element.ElementKind;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.element.TypeElement;
+
+import org.netbeans.api.java.source.ui.ElementOpen;
+import org.netbeans.api.java.source.ElementHandle;
 import org.netbeans.api.java.source.JavaSource;
 import org.netbeans.api.java.source.SourceUtils;
 
 import org.openide.filesystems.FileObject;
-import org.openide.nodes.*;
+
+import org.openide.nodes.AbstractNode;
+import org.openide.nodes.ChildFactory;
+import org.openide.nodes.Children;
+import org.openide.nodes.Node;
 
 final class JavaNodes {
     

@@ -4,9 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.BorderFactory;
 
 import org.netbeans.api.editor.EditorRegistry;
 import org.netbeans.api.java.source.JavaSource;
@@ -14,15 +14,24 @@ import org.openide.explorer.ExplorerManager;
 import org.openide.explorer.view.OutlineView;
 import org.openide.filesystems.FileObject;
 import org.openide.util.RequestProcessor;
-import javax.swing.BorderFactory;
 import org.netbeans.modules.editor.NbEditorUtilities;
+import org.openide.nodes.Node;
 
 
 import java.awt.event.KeyEvent;
 import java.beans.PropertyVetoException;
 import java.util.Locale;
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.KeyStroke;
-import org.openide.nodes.Node;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingUtilities;
 
 
 public class JavaMembersPanel extends JPanel implements ExplorerManager.Provider {

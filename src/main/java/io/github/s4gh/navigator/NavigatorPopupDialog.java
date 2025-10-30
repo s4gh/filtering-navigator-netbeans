@@ -1,8 +1,19 @@
 package io.github.s4gh.navigator;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.BorderFactory;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JRootPane;
+import javax.swing.KeyStroke;
 import org.openide.awt.Actions;
 
 public class NavigatorPopupDialog extends JDialog {
