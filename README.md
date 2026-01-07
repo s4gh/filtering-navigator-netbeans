@@ -1,3 +1,5 @@
+![Downloads](https://img.shields.io/endpoint?url=https://openbeans.org/plugin-counter/api/116)
+
 # Overview
 Plugin for NetBans IDE that provides an alternative implementation of the built-in "Navigator" view. The plugin works exclusively with Java source files. It displays a pop-up window showing the structure of the file - a tree view of members, methods, and other classes. And allows for searching and quick navigation to a selected member.
 
